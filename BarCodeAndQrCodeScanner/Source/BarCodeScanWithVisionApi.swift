@@ -18,7 +18,9 @@ class BarCodeScanWithVisionApi:NSObject, Alert{
         }
         self.processClassification(request)
     }
+    
     var delegate:BarCodeScannerDelegate?
+    
     override init() {
        
     }
@@ -104,7 +106,6 @@ extension BarCodeScanWithVisionApi{
         guard let barcodes = request.results else { return }
         DispatchQueue.main.async { [self] in
             if captureSession.isRunning {
-//                view.layer.sublayers?.removeSubrange(1...)
                 
                 for barcode in barcodes {
                     guard
