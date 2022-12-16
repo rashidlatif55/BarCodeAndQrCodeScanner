@@ -1,13 +1,13 @@
 //
-//  BarCodeScanerPDF417UITestsLaunchTests.swift
-//  BarCodeScanerPDF417UITests
+//  BarCodeAndQrCodeScannerUITestsLaunchTests.swift
+//  BarCodeAndQrCodeScannerUITests
 //
-//  Created by Rashid Latif on 15/12/2022.
+//  Created by Rashid Latif on 16/12/2022.
 //
 
 import XCTest
 
-final class BarCodeScanerPDF417UITestsLaunchTests: XCTestCase {
+final class BarCodeAndQrCodeScannerUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

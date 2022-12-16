@@ -1,14 +1,14 @@
 //
-//  BarCodeScanerPDF417Tests.swift
-//  BarCodeScanerPDF417Tests
+//  BarCodeAndQrCodeScannerTests.swift
+//  BarCodeAndQrCodeScannerTests
 //
-//  Created by Rashid Latif on 15/12/2022.
+//  Created by Rashid Latif on 16/12/2022.
 //
 
 import XCTest
-@testable import BarCodeScanerPDF417
+@testable import BarCodeAndQrCodeScanner
 
-final class BarCodeScanerPDF417Tests: XCTestCase {
+final class BarCodeAndQrCodeScannerTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

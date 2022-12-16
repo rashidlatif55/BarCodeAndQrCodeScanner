@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QUd-2D-3X6">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="koR-wQ-GZ2">
+            <objects>
+                <viewController id="Cqs-cs-Cia" customClass="ViewController" customModule="BarCodeAndQrCodeScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0rH-A6-mg1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xn0-JL-401">
+                                <rect key="frame" x="144.66666666666666" y="374.66666666666669" width="104" height="103"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3JA-lm-7rQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="104" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Scan"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="scanAction:" destination="Cqs-cs-Cia" eventType="touchUpInside" id="4ad-z2-w5R"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wj4-Ok-j2V">
+                                        <rect key="frame" x="0.0" y="59" width="104" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="rVG-mw-zGO"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Generate"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="generateAction:" destination="Cqs-cs-Cia" eventType="touchUpInside" id="Ojo-bc-yTU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ear-Bd-5yI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xn0-JL-401" firstAttribute="centerY" secondItem="0rH-A6-mg1" secondAttribute="centerY" id="1mi-OT-2AD"/>
+                            <constraint firstItem="xn0-JL-401" firstAttribute="centerX" secondItem="0rH-A6-mg1" secondAttribute="centerX" id="dLK-Y2-LWw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pjl-66-HCP"/>
+                    <connections>
+                        <segue destination="rGA-DR-aMJ" kind="show" identifier="scaneSegue" id="2OM-Po-w6G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1nD-PF-QTM" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="983.96946564885491" y="-23.239436619718312"/>
+        </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="fcJ-gE-5Ef">
+            <objects>
+                <viewController storyboardIdentifier="ScanViewController" id="rGA-DR-aMJ" customClass="ScanViewController" customModule="BarCodeAndQrCodeScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hKg-0R-FJD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jee-gH-4W6">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1V-vM-J76">
+                                <rect key="frame" x="139" y="754" width="115" height="44"/>
+                                <color key="backgroundColor" systemColor="tintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="sfg-rH-wA6"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Start again">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startAgainAction:" destination="rGA-DR-aMJ" eventType="touchUpInside" id="cPI-jE-Lxc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="f7N-WE-X8H"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f7N-WE-X8H" firstAttribute="trailing" secondItem="jee-gH-4W6" secondAttribute="trailing" id="7uD-xX-Xle"/>
+                            <constraint firstAttribute="bottom" secondItem="jee-gH-4W6" secondAttribute="bottom" id="94B-G0-SYE"/>
+                            <constraint firstItem="jee-gH-4W6" firstAttribute="top" secondItem="hKg-0R-FJD" secondAttribute="top" id="ICd-so-y65"/>
+                            <constraint firstItem="f7N-WE-X8H" firstAttribute="bottom" secondItem="T1V-vM-J76" secondAttribute="bottom" constant="20" id="PUd-7W-ERy"/>
+                            <constraint firstItem="T1V-vM-J76" firstAttribute="centerX" secondItem="hKg-0R-FJD" secondAttribute="centerX" id="Uwm-cH-lUY"/>
+                            <constraint firstItem="jee-gH-4W6" firstAttribute="leading" secondItem="f7N-WE-X8H" secondAttribute="leading" id="zl0-JE-WC4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zyP-59-c6w">
+                        <barButtonItem key="rightBarButtonItem" image="flash.icon" id="WeW-KT-y8w">
+                            <connections>
+                                <action selector="flashAction:" destination="rGA-DR-aMJ" id="BVQ-VY-t0b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="scanView" destination="jee-gH-4W6" id="yhq-eY-stw"/>
+                        <outlet property="startAgainButton" destination="T1V-vM-J76" id="Rii-zx-g0K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M0a-zH-rg6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992" y="720"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oyl-js-ZyF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QUd-2D-3X6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IMA-Y7-aUS">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Cqs-cs-Cia" kind="relationship" relationship="rootViewController" id="lfn-rd-Na4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3tN-LS-oWf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.251908396946561" y="-23.239436619718312"/>
+        </scene>
+        <!--Generate View Controller-->
+        <scene sceneID="ri8-s7-jYd">
+            <objects>
+                <viewController storyboardIdentifier="GenerateViewController" id="Mk3-sX-ZDk" customClass="GenerateViewController" customModule="BarCodeAndQrCodeScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IKT-Ye-bLS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9fz-dg-ElR">
+                                <rect key="frame" x="15" y="79" width="363" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="uUG-Xr-M1s"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Q2C-MZ-K1W">
+                                <rect key="frame" x="15" y="189" width="363" height="103"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CS0-4p-REp">
+                                        <rect key="frame" x="0.0" y="0.0" width="363" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Ejt-wW-A75"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvT-Ue-35a">
+                                        <rect key="frame" x="0.0" y="59" width="363" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="o7K-cz-VYB"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Generate"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="generateAction:" destination="Cqs-cs-Cia" eventType="touchUpInside" id="CXO-l8-SwD"/>
+                                            <action selector="generateBarCodeAction:" destination="Mk3-sX-ZDk" eventType="touchUpInside" id="JBd-tR-04U"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="waY-YU-SyQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Q2C-MZ-K1W" firstAttribute="leading" secondItem="IKT-Ye-bLS" secondAttribute="leading" constant="15" id="9u3-hD-eJB"/>
+                            <constraint firstItem="Q2C-MZ-K1W" firstAttribute="top" secondItem="9fz-dg-ElR" secondAttribute="bottom" constant="10" id="ffe-9n-soP"/>
+                            <constraint firstItem="9fz-dg-ElR" firstAttribute="leading" secondItem="waY-YU-SyQ" secondAttribute="leading" constant="15" id="hG8-bz-dSQ"/>
+                            <constraint firstItem="9fz-dg-ElR" firstAttribute="top" secondItem="waY-YU-SyQ" secondAttribute="top" constant="20" id="hNH-Co-w77"/>
+                            <constraint firstItem="waY-YU-SyQ" firstAttribute="trailing" secondItem="9fz-dg-ElR" secondAttribute="trailing" constant="15" id="l19-bg-6Q5"/>
+                            <constraint firstItem="waY-YU-SyQ" firstAttribute="trailing" secondItem="Q2C-MZ-K1W" secondAttribute="trailing" constant="15" id="xOi-kT-MYr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="barcodeImageView" destination="9fz-dg-ElR" id="Rdn-TO-XM4"/>
+                        <outlet property="inputTextField" destination="CS0-4p-REp" id="7aI-2K-0QO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4NN-d5-3nk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1760" y="725"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="flash.icon" width="45" height="45"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

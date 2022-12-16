@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  BarCodeScanerPDF417
+//  BarCodeAndQrCodeScanner
 //
-//  Created by Rashid Latif on 15/12/2022.
+//  Created by Rashid Latif on 16/12/2022.
 //
 
 import UIKit
